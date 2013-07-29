@@ -21,11 +21,8 @@
                     .attr('value', '1')
                     .addClass('switch-input')
                     .click(function() {
-                        if ($(this).attr('checked') != $el.attr('checked')) {
-                            $el.click();
-
-                            $no.removeAttr('checked');
-                        }
+                        $el.prop('checked', true);
+                        $no.prop('checked', false);
                     });
 
             var $yesLabel = $('<label></label>')
@@ -40,11 +37,8 @@
                     .attr('value', '0')
                     .addClass('switch-input')
                     .click(function() {
-                        if ($(this).attr('checked') != $el.attr('checked')) {
-                            $el.click();
-
-                            $yes.removeAttr('checked');
-                        }
+                        $el.prop('checked', false);
+                        $yes.prop('checked', false);
                     });
 
             var $noLabel = $('<label></label>')
@@ -60,13 +54,23 @@
                     .append($noLabel);
 
             if ($el.is(':checked')) {
-                $yes.attr('checked', 'checked');
+                $yes.prop('checked', true);
             } else {
-                $no.attr('checked', 'checked');
+                $no.prop('checked', true);
             }
 
             $el.hide();
             $el.parent().append($yesno);
+
+            $el.bind('change', function() {
+                if ($el.is(':checked')) {
+                    $yes.prop('checked', true);
+                    $no.prop('checked', false);
+                } else {
+                    $no.prop('checked', true);
+                    $yes.prop('checked', false);
+                }
+            });
         };
 
         init();
