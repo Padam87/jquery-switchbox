@@ -15,11 +15,13 @@
             var $el = $(el);
 
             var $yes = $('<input>')
-                    .attr('id', $el.attr('id') + '_yes')
-                    .attr('name', 'switchbox_' + $el.attr('name'))
-                    .attr('type', 'radio')
-                    .attr('value', '1')
-                    .addClass('switch-input')
+                    .attr({
+                        id: $el.attr('id') + '_yes',
+                        name: 'switchbox_' + $el.attr('name'),
+                        type: 'radio',
+                        value: '1',
+                        class: 'switch-input',
+                    })
                     .click(function() {
                         $el.prop('checked', true);
                         $no.prop('checked', false);
@@ -31,11 +33,13 @@
                     .addClass('switch switch-on');
 
             var $no = $('<input>')
-                    .attr('id', $el.attr('id') + '_no')
-                    .attr('name', 'switchbox_' + $el.attr('name'))
-                    .attr('type', 'radio')
-                    .attr('value', '0')
-                    .addClass('switch-input')
+                    .attr({
+                        id: $el.attr('id') + '_no',
+                        name: 'switchbox_' + $el.attr('name'),
+                        type: 'radio',
+                        value: '0',
+                        class: 'switch-input',
+                    })
                     .click(function() {
                         $el.prop('checked', false);
                         $yes.prop('checked', false);
