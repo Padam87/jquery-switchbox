@@ -10,9 +10,12 @@
         switchbox.settings = {};
 
         var init = function() {
-            switchbox.settings = $.extend({}, defaults, options);
-
             var $el = $(el);
+
+            switchbox.settings = $.extend(defaults, options, {
+                yesText: $el.data('switchbox-yestext'),
+                noText: $el.data('switchbox-notext')
+            });
 
             var $yes = $('<input>')
                     .attr({
