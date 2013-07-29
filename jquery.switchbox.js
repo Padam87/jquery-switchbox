@@ -16,7 +16,7 @@
 
             var $yes = $('<input>')
                     .attr('id', $el.attr('id') + '_yes')
-                    .attr('name', $el.attr('name') + '_yesno')
+                    .attr('name', 'switchbox_' + $el.attr('name'))
                     .attr('type', 'radio')
                     .attr('value', '1')
                     .addClass('switch-input')
@@ -32,7 +32,7 @@
 
             var $no = $('<input>')
                     .attr('id', $el.attr('id') + '_no')
-                    .attr('name', $el.attr('name') + '_yesno')
+                    .attr('name', 'switchbox_' + $el.attr('name'))
                     .attr('type', 'radio')
                     .attr('value', '0')
                     .addClass('switch-input')
