@@ -1,0 +1,8 @@
+{
+  "name": "jquery-switchbox",
+  "version": "1.0.0",
+  "main": "jquery-switchbox.js",
+  "dependencies": {
+    "jquery": "*"
+  }
+}
